@@ -1,8 +1,20 @@
 /*
   Створіть новий тип даних, який підходить для цих двох об'єктів.
 */
+type Status = 'open' | 'close';
+interface Details {
+  createAt: Date;
+  updateAt: Date;
+}
+interface Page {
+  title: string;
+  likes: number;
+  accounts: string[];
+  status: Status;
+  details?: Details;
+}
 
-const page1 = {
+const page1: Page = {
   title: 'The awesome page',
   likes: 100,
   accounts: ['Max', 'Anton', 'Nikita'],
@@ -13,11 +25,14 @@ const page1 = {
   }
 }
 
-const page2 = {
+
+const page2: Page = {
   title: 'Python or Js',
   likes: 5,
   accounts: ['Alex'],
   status: 'close',
 }
 
-export {};
+
+export { };
+
