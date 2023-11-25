@@ -4,14 +4,16 @@
   Функція compare повинна повертати AllType.
 */
 
-type AllType = {
+interface AllType {
   name: string;
   position: number;
   color: string;
   weight: number
 }
 
-function compare (top, bottom): AllType {
+type CustomType = Pick<AllType, 'name' | 'position' | 'color' | 'weight'>;
+
+function compare (top: CustomType, bottom: CustomType): AllType {
   return {
     name: top.name,
     color: top.color,
@@ -20,4 +22,4 @@ function compare (top, bottom): AllType {
   }
 }
 
-export {};
+export { };
